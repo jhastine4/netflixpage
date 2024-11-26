@@ -1,0 +1,81 @@
+/* Watch Next Section */
+.watch-next-container {
+  position: fixed;
+  bottom: 0; /* Fixes the section at the bottom */
+  width: 100%; /* Full width */
+  background-color: transparent; /* Removes background */
+  color: white;
+  padding: 20px 10px;
+  z-index: 10; /* Ensures it's above other elements */
+}
+
+.watch-next-container h2 {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.movie-list {
+  display: flex;
+  gap: 10px; /* Space between items */
+  overflow-x: auto; /* Horizontal scrolling */
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.movie-list::-webkit-scrollbar {
+  height: 8px; /* Scrollbar height */
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5); /* Light scrollbar color */
+  border-radius: 4px;
+}
+
+.movie-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Movie Item Styling */
+.movie-item {
+  position: relative; /* Ensures layering of video over image */
+  overflow: hidden; /* Keeps video/image within bounds */
+  flex-shrink: 0; /* Prevents shrinking in smaller screens */
+  width: 200px; /* Width of the rectangle */
+  height: 120px; /* Height of the rectangle */
+  border-radius: 15px; /* Optional: Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+}
+
+.movie-item img {
+  width: 100%; /* Fits the container width */
+  height: 100%; /* Fits the container height */
+  object-fit: cover; /* Maintains aspect ratio while covering */
+  border-radius: inherit; /* Matches container's border-radius */
+}
+
+.movie-item video {
+  position: absolute; /* Overlays the image */
+  top: 0;
+  left: 0;
+  width: 100%; /* Matches the image's dimensions */
+  height: 100%; /* Matches the image's dimensions */
+  object-fit: cover; /* Maintains video aspect ratio */
+  border-radius: inherit; /* Matches container's border-radius */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in */
+  z-index: 2; /* Ensures video is above the image */
+}
+
+.movie-item:hover video {
+  opacity: 1; /* Reveals the video on hover */
+}
+.btn-group {
+ 
+  border-radius: 20px; /* Optional: Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  margin-left: 20px;
+  gap: 10px; /* Space between items */
+  margin-top: 250px;
+
+
+}
